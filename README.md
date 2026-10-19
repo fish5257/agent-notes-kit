@@ -4,6 +4,16 @@ A small, portable workflow for preserving engineering decisions in coding-agent 
 
 Agent Notes are durable decision records, not chat transcripts, requirements indexes, or per-task activity logs. The Skill does not create a Note after every change and does not depend on an automatic RAG service; it searches the repository's own Notes when relevant.
 
+## Ask an agent to apply this repository
+
+Paste this repository URL into the agent working in the target project:
+
+```text
+Use https://github.com/fish5257/agent-notes-kit as the source. Read its APPLY.md and apply the project layer to the current repository. Inspect existing AGENTS.md and Notes first, merge without overwriting existing rules or records, do not create a Note during setup, and run the provided format checker. Report the files added or merged and any conflicts.
+```
+
+`APPLY.md` is the agent-facing installation procedure. It distinguishes project setup from global Skill installation and tells the agent to preserve the target worktree.
+
 ## Quick start
 
 Clone the kit:

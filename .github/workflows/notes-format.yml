@@ -1,0 +1,17 @@
+name: Verify Agent Notes
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notes-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate active Notes
+        run: python3 .agents/notes/verify_format.py

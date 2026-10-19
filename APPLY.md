@@ -16,7 +16,7 @@ Merge these components into the target project:
 - `.agents/notes/AGENTS.md` and `.agents/notes/README.md` into the target Notes folder, preserving its current rules and vocabulary.
 - `.agents/notes/templates/` only for missing lifecycle templates; never replace existing templates without comparing them.
 - `.agents/notes/verify_format.py` if the target has no compatible Note validator.
-- The Skill trigger from this repo's `AGENTS.md` into the target root instructions. Merge it as a short conditional rule; do not replace the project's AGENTS file.
+- The applicable conditional Note workflow rules from this repo's root `AGENTS.md` into the target root instructions. Preserve the project's existing rules; this Note workflow does not depend on installing separate audit, review, or prose Skills.
 
 If the target already has a Note schema, validator, lifecycle folders, or same-name Skill, stop before overwriting it. Compare the two designs and report the exact conflict and a merge proposal.
 
@@ -34,11 +34,6 @@ For Codex, the built-in `$skill-installer` can install this Skill directly from:
 https://github.com/fish5257/agent-notes-kit/tree/main/.agents/skills/agent-notes
 ```
 
-## Root AGENTS trigger
+## Root AGENTS triggers
 
-Merge a conditional rule like this into the target project's root `AGENTS.md`:
-
-```markdown
-- For durable architecture/API/state/persistence/compatibility decisions, use `$agent-notes` to retrieve related Notes before implementation. Only capture/finalize a Note after implementation and relevant verification, and only when the rationale is not already carried by code, tests, or docs. Skip routine fixes and local UI changes.
-- When delegating such work, include the `$agent-notes` trigger and the required operation in the assignment.
-```
+Use the conditional rules in this repository's root `AGENTS.md` as the source for project-level routing. Merge the applicable bullets into the target project's root `AGENTS.md`; do not replace its existing instructions.

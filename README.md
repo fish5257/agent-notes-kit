@@ -65,8 +65,26 @@ Note 只记录代码、测试和现有文档无法充分表达、且未来维护
 
 运行 `python3 .agents/notes/verify_format.py` 检查活跃 Note 的状态与格式。这个脚本不判断决策是否正确，也不替代 Agent 的同主题查重和 supersession 审查。
 
-## Inspiration and license
+## Upstream references and license
 
-The lifecycle is adapted from the public [DeepSeek Harness Agent Note workflow](https://github.com/deepseek-ai/deepseek-harness/tree/master/.agents/notes) and `dsh-archive-agent-notes` Skill. This repository is an independent, portable implementation; it does not include DeepSeek Harness runtime code.
+This kit adapts selected ideas from the public [DeepSeek Harness Agent Note workflow](https://github.com/deepseek-ai/deepseek-harness/tree/master/.agents/notes) and related Skills:
+
+- [`dsh-archive-agent-notes`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-archive-agent-notes/SKILL.md) — duplicate and supersession checks, plus decision-value-based retention.
+- [`dsh-find-simplifications`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-find-simplifications/SKILL.md) — simplification audits as a source of durable decision candidates.
+- [`dsh-code-review`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-code-review/SKILL.md) — consulting Agent Notes for design rationale during review.
+- [`dsh-prose-standard`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-prose-standard/SKILL.md) — preserving rationale and contracts while keeping Note prose concise.
+
+These links identify design references, not runtime dependencies. This repository is an independent, portable implementation; it does not bundle DeepSeek Harness Skills or runtime code.
 
 Licensed under the MIT License. See [LICENSE](LICENSE).
+
+### 上游参考
+
+本工具包从公开的 [DeepSeek Harness Agent Note 流程](https://github.com/deepseek-ai/deepseek-harness/tree/master/.agents/notes) 及相关 Skill 中吸收了部分设计思路：
+
+- [`dsh-archive-agent-notes`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-archive-agent-notes/SKILL.md)：决策去重、取代关系检查和按长期价值维护记录。
+- [`dsh-find-simplifications`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-find-simplifications/SKILL.md)：简化审计可作为发现长期决策候选的入口。
+- [`dsh-code-review`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-code-review/SKILL.md)：审查时查阅 Agent Notes 中的设计理由。
+- [`dsh-prose-standard`](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-prose-standard/SKILL.md)：保留理由和契约，同时让 Note 文字简洁。
+
+这些链接用于标注设计参考，不是运行依赖。本仓库提供独立、可移植的实现，不包含 DeepSeek Harness 的 Skill 文件或运行时代码。
